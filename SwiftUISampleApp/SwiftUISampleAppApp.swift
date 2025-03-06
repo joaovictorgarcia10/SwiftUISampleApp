@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct SwiftUISampleAppApp: App {
+    @State private var landmarkViewModel = LandmarkViewModel(repository: LandmarkLocalRepository())
+    @State private var hikeViewModel = HikeViewModel(repository: HikeLocalRepository())
+    @State private var profileViewModel = ProfileViewModel()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environment(landmarkViewModel)
+                .environment(hikeViewModel)
+                .environment(profileViewModel)
         }
     }
 }
