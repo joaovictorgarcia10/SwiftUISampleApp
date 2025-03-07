@@ -9,32 +9,39 @@ import SwiftUI
 
 struct ProfileSummary: View {
     @Environment(HikeViewModel.self) var hikeViewModel
-
+    
     var profile: Profile
-
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 Text(profile.username)
                     .bold()
                     .font(.title)
-
-
+                
+                
                 Text("Notifications: \(profile.prefersNotifications ? "On": "Off" )")
                 Text("Seasonal Photos: \(profile.seasonalPhoto.rawValue)")
                 Text("Goal Date: ") + Text(profile.goalDate, style: .date)
-
+                
                 Divider()
-
+                
                 VStack(alignment: .leading) {
                     Text("Completed Badges")
                         .font(.headline)
                     
                     if hikeViewModel.hikes == nil {
-                        ProgressView("Loading...")
+                        ProgressView()
                             .progressViewStyle(CircularProgressViewStyle(tint: .black))
                     } else if hikeViewModel.hikes!.isEmpty {
-                        Text("No hikings founded")
+                        VStack(alignment: .leading) {
+                            Text("No hikings or badges founded")
+                            Button {
+                                hikeViewModel.loadHikes()
+                            } label: {
+                                Text("Try again")
+                            }
+                        }
                     } else {
                         ScrollView(.horizontal) {
                             HStack {
