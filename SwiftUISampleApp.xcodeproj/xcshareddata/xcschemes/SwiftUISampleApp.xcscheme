@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C37A5E572D37BB3D00CAA6E2"
-               BuildableName = "SwiftUISampleApp.app"
-               BlueprintName = "SwiftUISampleApp"
+               BuildableName = "SwiftUISample.app"
+               BlueprintName = "SwiftUISample"
                ReferencedContainer = "container:SwiftUISampleApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C37A5E672D37BB3F00CAA6E2"
-               BuildableName = "SwiftUISampleAppTests.xctest"
-               BlueprintName = "SwiftUISampleAppTests"
+               BuildableName = "SwiftUISampleTests.xctest"
+               BlueprintName = "SwiftUISampleTests"
                ReferencedContainer = "container:SwiftUISampleApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -46,8 +46,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C37A5E712D37BB3F00CAA6E2"
-               BuildableName = "SwiftUISampleAppUITests.xctest"
-               BlueprintName = "SwiftUISampleAppUITests"
+               BuildableName = "SwiftUISampleUITests.xctest"
+               BlueprintName = "SwiftUISampleUITests"
                ReferencedContainer = "container:SwiftUISampleApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -68,11 +68,18 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C37A5E572D37BB3D00CAA6E2"
-            BuildableName = "SwiftUISampleApp.app"
-            BlueprintName = "SwiftUISampleApp"
+            BuildableName = "SwiftUISample.app"
+            BlueprintName = "SwiftUISample"
             ReferencedContainer = "container:SwiftUISampleApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "ENVIRONMENT"
+            value = "local"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -85,8 +92,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C37A5E572D37BB3D00CAA6E2"
-            BuildableName = "SwiftUISampleApp.app"
-            BlueprintName = "SwiftUISampleApp"
+            BuildableName = "SwiftUISample.app"
+            BlueprintName = "SwiftUISample"
             ReferencedContainer = "container:SwiftUISampleApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

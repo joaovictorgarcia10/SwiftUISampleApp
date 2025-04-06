@@ -26,5 +26,5 @@ struct CategoryItem: View {
 }
 
 #Preview {
-    CategoryItem(landmark: LandmarkViewModel(repository: LandmarkLocalRepository()).landmarks![0])
+    CategoryItem(landmark: LandmarkViewModel().landmarks![0])
 }

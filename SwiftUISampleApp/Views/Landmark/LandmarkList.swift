@@ -52,6 +52,6 @@ struct LandmarkList: View {
 }
 
 #Preview {
-    let landmarkViewModel = LandmarkViewModel(repository: LandmarkLocalRepository())
+    let landmarkViewModel = LandmarkViewModel()
     return LandmarkList().environment(landmarkViewModel)
 }

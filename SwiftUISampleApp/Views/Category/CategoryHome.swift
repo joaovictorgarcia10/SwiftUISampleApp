@@ -46,7 +46,7 @@ struct CategoryHome: View {
 }
 
 #Preview {
-    let landmarkViewModel = LandmarkViewModel(repository: LandmarkLocalRepository())
+    let landmarkViewModel = LandmarkViewModel()
 
     return CategoryHome()
         .environment(landmarkViewModel)

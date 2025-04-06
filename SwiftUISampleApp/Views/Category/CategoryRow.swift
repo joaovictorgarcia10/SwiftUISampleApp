@@ -36,7 +36,7 @@ struct CategoryRow: View {
 }
 
 #Preview {
-    let landmarks = LandmarkViewModel(repository: LandmarkLocalRepository()).landmarks
+    let landmarks = LandmarkViewModel().landmarks
     return CategoryRow(
         categoryName: landmarks![0].category.rawValue,
         items: Array(landmarks!.prefix(3))

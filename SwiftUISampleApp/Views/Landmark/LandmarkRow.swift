@@ -29,7 +29,7 @@ struct LandmarkRow: View {
 }
 
 #Preview("First") {
-    let landmarkViewModel = LandmarkViewModel(repository: LandmarkLocalRepository())
+    let landmarkViewModel = LandmarkViewModel()
 
     return if let firstLandmark = landmarkViewModel.landmarks!.first {
         LandmarkRow(landmark: firstLandmark)
@@ -39,7 +39,7 @@ struct LandmarkRow: View {
 }
 
 #Preview("Last") {
-    let landmarkViewModel = LandmarkViewModel(repository: LandmarkLocalRepository())
+    let landmarkViewModel = LandmarkViewModel()
     
     return if let firstLandmark = landmarkViewModel.landmarks!.last {
         LandmarkRow(landmark: firstLandmark)

@@ -48,7 +48,7 @@ struct ContentView: View {
 
 
 #Preview {
-    let landmarkViewModel = LandmarkViewModel(repository: LandmarkLocalRepository())
+    let landmarkViewModel = LandmarkViewModel()
     let hikeViewModel = HikeViewModel(repository: HikeLocalRepository())
     let profileViewModel = ProfileViewModel()
 

@@ -9,25 +9,26 @@ import Foundation
 
 @Observable
 class LandmarkViewModel {
-    let repository: BaseRespository
     
-    init(repository: BaseRespository) {
-        self.repository = repository
+    init() {
         loadLandmarks()
     }
     
     var landmarks: [Landmark]?
     var categories: [String: [Landmark]] = [:]
     var features: [Landmark] = []
-
+    
     func loadLandmarks() {
-        landmarks = nil
-        categories = [:]
-        features = []
+        resetVariables()
+        
+        guard let repository = self.getRepositoryFromEnvironment() else {
+            self.landmarks = []
+            return
+        }
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
             do {
-                self.landmarks = try self.repository.loadData()
+                self.landmarks = try repository.loadData()
             } catch {
                 self.landmarks = []
             }
@@ -37,5 +38,24 @@ class LandmarkViewModel {
                 self.features = self.landmarks!.filter { $0.isFeatured }
             }
         }
+    }
+        
+    private func getRepositoryFromEnvironment() -> BaseRespository? {
+        let value = ProcessInfo.processInfo.environment["ENVIRONMENT"]
+        
+        switch value {
+        case "local":
+            return LandmarkLocalRepository()
+        case "remote":
+            return LandmarkRemoteRepository()
+        default:
+            return nil
+        }
+    }
+    
+    private func resetVariables() {
+        self.landmarks = nil
+        self.categories = [:]
+        self.features = []
     }
 }
